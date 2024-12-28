@@ -2,7 +2,6 @@
     scroll-behavior: smooth;
  }
  
-
 ::-webkit-scrollbar {
     display: none;
   }
@@ -208,6 +207,18 @@ color: #FFFFFF;
   font-size: 2.2rem;
   margin-bottom: 10%;
 }
+
+.more-more-content{
+  font-family: bold;
+  font-size: 2rem;
+  margin-bottom: 5%;
+  margin-top: 3%;
+  background: linear-gradient(180deg, #c7c7c7, #1f1f1f); /* Hot Pink to Coral */
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 
 .img-fluid {
   border-radius: 15px;
@@ -460,7 +471,7 @@ color: #FFFFFF;
 /* Footer */
 /* Footer */
 .footer {
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0, 0);
   color: var(--text-primary);
   padding: 4rem 0 2rem;
 }
@@ -608,7 +619,7 @@ color: #FFFFFF;
   }
 
   .navbar-collapse {
-    background-color: rgba(0, 0, 0, 0.95);
+    background-color: rgba(0, 0, 0, 0);
     padding: 1rem;
     border-radius: 8px;
     margin-top: 0.5rem;
@@ -656,6 +667,18 @@ color: #FFFFFF;
     rgba(0, 0, 0, 0.8)
   ),
   url('./public/img3.jpg'); /* Replace with your library background image path */
+background-size: cover;
+background-position: center;
+background-attachment: fixed; /* Optional: Creates a parallax effect */
+color: #fff;
+}
+
+#back-bg{
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.8),
+    rgba(0, 0, 0, 0.8)
+  ),
+  url('./public/img7.jpg'); /* Replace with your library background image path */
 background-size: cover;
 background-position: center;
 background-attachment: fixed; /* Optional: Creates a parallax effect */
@@ -737,7 +760,7 @@ color: #fff;
   left: 16px;
   color: #ffffff;
   font-family: 'bold', sans-serif;
-  font-size: 24px;
+  font-size: 28px;
   z-index: 2;
   margin: 0;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
@@ -798,24 +821,12 @@ color: #fff;
   }
 }
 
-.container1 {
-  display: flex;
-  justify-content: space-between;
-  align-items:center;
-  max-width: 1200px;
-  margin: 0;
-  min-height: 200px;
-  gap: 2rem;
-
-}
 
 .genres-description {
-  flex: 1;
-}
-
-.genres-description p {
-  font-size: 1.25rem;
-  line-height: 1.7;
+  gap: 1.5rem; /* Space between the two columns */
+  font-size: 1.3rem;
+  line-height: 1.6;
+  color: #b3b3b3; /* Ensuring consistent text color */
   margin: 0;
 }
 
@@ -823,64 +834,88 @@ color: #fff;
   flex: 0 0 400px;
   height: 60px;
   position: relative;
-  overflow: hidden;
+  align-items: center;
 }
 
 .genre-text {
   position: absolute;
   width: 100%;
   text-align: center;
-  font-size: 2.8rem;
+  font-size: 4rem;
   font-weight: bold;
-  animation: slideUp 12s infinite;
+  animation: slideUp 18s infinite; /* Increased duration for smoother transitions */
   opacity: 0;
 }
 
+/* Gradient and Animation Delay Updates */
 .genre-text:nth-child(1) {
-  background: linear-gradient(45deg, #FF6B6B, #4ECDC4);
+  background: linear-gradient(90deg, #FF0099, #FF6B6B); /* Hot Pink to Coral */
   background-clip: text;
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation-delay: 0s;
 }
 
 .genre-text:nth-child(2) {
-  background: linear-gradient(45deg, #FFE66D, #4A90E2);
+  background: linear-gradient(90deg, #00F5A0, #00D9F5); /* Neon Mint to Electric Blue */
   background-clip: text;
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation-delay: 3s;
 }
 
 .genre-text:nth-child(3) {
-  background: linear-gradient(45deg, #A8E6CF, #FF8B94);
+  background: linear-gradient(90deg, #FF3CAC, #784BA0); /* Electric Pink to Royal Purple */
   background-clip: text;
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation-delay: 6s;
 }
 
 .genre-text:nth-child(4) {
-  background: linear-gradient(45deg, #B8F2E6, #FFA69E);
+  background: linear-gradient(90deg, #FFD700, #FFA500); /* Golden Yellow to Bright Orange */
   background-clip: text;
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation-delay: 9s;
 }
 
+.genre-text:nth-child(5) {
+  background: linear-gradient(90deg, #00FFFF, #4169E1); /* Cyan to Royal Blue */
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation-delay: 12s;
+}
+
+.genre-text:nth-child(6) {
+  background: linear-gradient(90deg, #FF1493, #FF69B4); /* Deep Pink to Hot Pink */
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation-delay: 15s;
+}
+
+/* Keyframes to Prevent Overlap */
 @keyframes slideUp {
-  0%, 20% {
+  0%, 14% {
     transform: translateY(100%);
     opacity: 0;
   }
-  25%, 45% {
+  15%, 30% {
     transform: translateY(0);
     opacity: 1;
   }
-  50%, 100% {
+  31%, 100% {
     transform: translateY(-100%);
     opacity: 0;
   }
 }
 
+
+
 @media (max-width: 768px) {
-  .container1 {
+  .container {
     flex-direction: column;
   }
   
@@ -896,4 +931,69 @@ color: #fff;
   .genre-text {
     font-size: 1.5rem;
   }
+}
+
+.premium-header {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.premium-header h1 {
+  font-size: 3rem;
+  font-family: bold;
+}
+
+.premium-header p {
+  font-size: 1.3rem;
+  margin-top: 0.5rem;
+  font-family: medium;
+}
+
+.card {
+  border: none;
+  border-radius: 12px;
+  color: #fff;
+  text-align: center;
+  padding: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.137);
+}
+
+.card i {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.card.premium-individual {
+  background: linear-gradient(90deg, #e97c00, #f1c40f);
+}
+
+.card.premium-duo {
+  background: linear-gradient(270deg, #0047cc, #0099ff);
+}
+
+.card.premium-student {
+  background: linear-gradient(90deg, #7e00c7, #ff2ecb);
+}
+
+.card.premium-family {
+  background: linear-gradient(270deg, #37ad00, #a6ff00);
+}
+
+.card h3 {
+  font-size: 1.8rem;
+  font-family: bold;
+  margin-bottom: 1rem;
+}
+
+.card p {
+  font-size: 1.3rem;
+  line-height: 1.4;
+  font-family: display;
 }

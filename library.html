@@ -39,18 +39,29 @@
     <!-- Fixed Genres Section -->
     <div class="container mt-5">
         <div class="genres-section">
-            <h1 class="genres-title mb-4">Genres</h1>
-            <div class="genres-description mb-5">
-                <p>The evolution of music genres throughout history reflects the changes in society, culture, and technology, showcasing the dynamic nature of art. The fusion of different genres has created exciting new sounds and subgenres, such as jazz-funk, country-rock, and electro-pop, among others.</p>
+            <div class="row">
+                <!-- Left Column -->
+                <div class="col-md-6 d-flex flex-column">
+                    <h1 class="genres-title mb-3">Genres</h1>
+                    <p class="genres-description mb-4">
+                        The evolution of music genres throughout history reflects the changes in society, culture, and technology, showcasing the dynamic nature of art. The fusion of different genres has created exciting new sounds and subgenres, such as jazz-funk, country-rock, and electro-pop, among others.
+                    </p>
+                </div>
+                <!-- Right Column -->
+                <div class="col-md-6 d-flex justify-content-end align-items-center">
+                    <div class="genre-carousel">
+                        <div class="genre-text">Jazz</div>
+                        <div class="genre-text">Rock</div>
+                        <div class="genre-text">Pop</div>
+                        <div class="genre-text">Hip-Hop</div>
+                        <div class="genre-text">Indie</div>
+                        <div class="genre-text">EDM</div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-              <div class="genre-carousel">
-                <div class="genre-text">Jazz-Funk</div>
-                <div class="genre-text">Country-Rock</div>
-                <div class="genre-text">Electro-Pop</div>
-                <div class="genre-text">Trip-Hop</div>
-              </div>
-            </div>
-            </div>
+    
 
             <div class="row g-4">
                 <!-- Genre Cards -->
@@ -107,6 +118,9 @@
         <audio id="song4" src="./public/music/audio4.mp3" preload="auto"></audio>
         <audio id="song5" src="./public/music/audio5.mp3" preload="auto"></audio>
         <audio id="song6" src="./public/music/audio6.mp3" preload="auto"></audio>
+    </div>
+    <div class="container text-center">
+        <p class="more-more-content">Loading...</p>
     </div>
     <footer class="footer py-5">
         <div class="container">
