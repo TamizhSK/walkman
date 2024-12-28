@@ -58,10 +58,9 @@ body {
 /* Navigation */
 .navbar {
   padding: 0.5rem 0;
-  margin-left: 20px;
-  margin-right: 20px;
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0, 0);
 }
+
 
 .navbar-brand {
   font-size: 2.5rem;
@@ -69,6 +68,8 @@ body {
   font-style: normal;
   font-weight: bold;
   margin-bottom: 7px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .brand-dot {
@@ -125,7 +126,7 @@ color: #FFFFFF;
   display: flex;
   align-items: center;
   justify-content: center; /* Centers text/content horizontally */
-  background-image: url('./public/img1.jpg'); 
+  background-image: url('./public/home/img1.jpg'); 
   background-size: cover; 
   background-position: center; 
   background-repeat: no-repeat; 
@@ -647,5 +648,253 @@ color: #FFFFFF;
   .login-btn {
     font-size: 16px;
     padding: 4px 16px !important;
+  }
+}
+
+#back{
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.8),
+    rgba(0, 0, 0, 0.8)
+  ),
+  url('./public/img3.jpg'); /* Replace with your library background image path */
+background-size: cover;
+background-position: center;
+background-attachment: fixed; /* Optional: Creates a parallax effect */
+color: #fff;
+}
+
+.genres-section {
+  padding: 2rem 0;
+}
+
+.genres-title {
+  font-family: 'black', sans-serif;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.genres-description {
+  font-family: 'medium', sans-serif;
+  color: #b3b3b3;
+  line-height: 1.6;
+  max-width: 800px;
+}
+
+/* Updated Genre Card Styles */
+.genre-card {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  aspect-ratio: 1 / 1;
+  background: #282828;
+  cursor: pointer;
+}
+
+.genre-card:hover {
+  transform: translateY(-5px);
+  background: #383838;
+}
+
+/* Image Container */
+.genre-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.genre-card:hover .genre-image {
+  transform: scale(1.05);
+}
+
+/* Hover Gradient Overlay */
+.genre-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.4) 70%,
+      rgba(0, 0, 0, 0.8) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.genre-card:hover::after {
+  opacity: 1;
+}
+
+/* Spotify-style Genre Title */
+.genre-title {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  color: #ffffff;
+  font-family: 'bold', sans-serif;
+  font-size: 24px;
+  z-index: 2;
+  margin: 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  transform: translateY(10px);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.genre-card:hover .genre-title {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+
+.genre-card:hover::before {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .genres-title {
+      font-size: 2rem;
+  }
+  
+  .genre-title {
+      font-size: 20px;
+      bottom: 12px;
+      left: 12px;
+  }
+
+  .genre-card::before {
+      width: 32px;
+      height: 32px;
+      font-size: 14px;
+      right: 12px;
+      bottom: 12px;
+  }
+}
+
+@media (max-width: 576px) {
+  .genres-title {
+      font-size: 1.75rem;
+  }
+  
+  .genre-title {
+      font-size: 18px;
+      bottom: 8px;
+      left: 8px;
+  }
+
+  .genre-card::before {
+      width: 28px;
+      height: 28px;
+      font-size: 12px;
+      right: 8px;
+      bottom: 8px;
+  }
+}
+
+.container1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 300px;
+  gap: 2rem;
+  padding: 20px;
+}
+
+.genres-description {
+  flex: 1;
+  padding: 20px;
+}
+
+.genres-description p {
+  font-size: 1.25rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.genre-carousel {
+  flex: 0 0 200px;
+  height: 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+.genre-text {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: bold;
+  animation: slideUp 12s infinite;
+  opacity: 0;
+}
+
+.genre-text:nth-child(1) {
+  background: linear-gradient(45deg, #FF6B6B, #4ECDC4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation-delay: 0s;
+}
+
+.genre-text:nth-child(2) {
+  background: linear-gradient(45deg, #FFE66D, #4A90E2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation-delay: 3s;
+}
+
+.genre-text:nth-child(3) {
+  background: linear-gradient(45deg, #A8E6CF, #FF8B94);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation-delay: 6s;
+}
+
+.genre-text:nth-child(4) {
+  background: linear-gradient(45deg, #B8F2E6, #FFA69E);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation-delay: 9s;
+}
+
+@keyframes slideUp {
+  0%, 20% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  25%, 45% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  50%, 100% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .container1 {
+    flex-direction: column;
+  }
+  
+  .genre-carousel {
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+  .genres-description p {
+    font-size: 1.1rem;
+  }
+  
+  .genre-text {
+    font-size: 1.5rem;
   }
 }
