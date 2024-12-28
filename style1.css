@@ -401,7 +401,6 @@ color: #FFFFFF;
 .feature-item {
   font-size: 2.2rem;
   background-clip: text;
-  -webkit-background-clip: text;
   color: transparent;
   padding: 1rem;
   position: relative;
@@ -839,28 +838,24 @@ color: #fff;
 
 .genre-text:nth-child(1) {
   background: linear-gradient(45deg, #FF6B6B, #4ECDC4);
-  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation-delay: 0s;
 }
 
 .genre-text:nth-child(2) {
   background: linear-gradient(45deg, #FFE66D, #4A90E2);
-  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation-delay: 3s;
 }
 
 .genre-text:nth-child(3) {
   background: linear-gradient(45deg, #A8E6CF, #FF8B94);
-  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation-delay: 6s;
 }
 
 .genre-text:nth-child(4) {
   background: linear-gradient(45deg, #B8F2E6, #FFA69E);
-  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation-delay: 9s;
 }
