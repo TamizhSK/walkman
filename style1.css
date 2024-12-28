@@ -21,35 +21,35 @@ body {
 
 @font-face {
   font-family: 'bold';
-  src: url('./public/bold.ttf') format('truetype'); /* Corrected format */
+  src: url('./public/fonts/bold.ttf') format('truetype'); /* Corrected format */
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'black';
-  src: url('./public/black.ttf') format('truetype'); /* Corrected format */
+  src: url('./public/fonts/black.ttf') format('truetype'); /* Corrected format */
   font-style: normal;
   font-weight: normal;
 }
 
 @font-face {
   font-family: 'medium';
-  src: url('./public/medium.ttf') format('truetype'); /* Corrected format */
+  src: url('./public/fonts/medium.ttf') format('truetype'); /* Corrected format */
   font-style: normal;
   font-weight: normal;
 }
 
 @font-face {
   font-family: 'display';
-  src: url('./public/regular.ttf') format('truetype'); /* Corrected format */
+  src: url('./public/fonts/regular.ttf') format('truetype'); /* Corrected format */
   font-style: normal;
   font-weight: normal;
 }
 
 @font-face {
   font-family: 'italic';
-  src: url('./public/italic.ttf') format('truetype'); /* Corrected format */
+  src: url('./public/fonts/italic.ttf') format('truetype'); /* Corrected format */
   font-style: normal;
   font-weight: normal;
 }
