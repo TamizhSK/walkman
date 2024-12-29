@@ -205,18 +205,31 @@
             const audio = document.getElementById(audioId);
 
             card.addEventListener('mouseenter', () => {
-                if (audio) {
-                    audio.play().catch(e => console.log('Audio playback prevented:', e));
-                }
-            });
+        if (audio) {
+            audio.play().catch(e => console.log('Audio playback prevented:', e));
+        }
+    });
 
-            card.addEventListener('mouseleave', () => {
-                if (audio) {
-                    audio.pause();
-                    audio.currentTime = 0;
-                }
-            });
-        });
+    // Pause audio on mouse leave
+    card.addEventListener('mouseleave', () => {
+        if (audio) {
+            audio.pause();
+            audio.currentTime = 0;
+        }
+    });
+
+    // Toggle audio playback on click/tap
+    card.addEventListener('click', () => {
+        if (audio) {
+            if (audio.paused) {
+                audio.play().catch(e => console.log('Audio playback prevented:', e));
+            } else {
+                audio.pause();
+                audio.currentTime = 0;
+            }
+        }
+    });
+});
     </script>
 </body>
 </html>
