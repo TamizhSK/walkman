@@ -685,6 +685,19 @@ background-attachment: fixed; /* Optional: Creates a parallax effect */
 color: #fff;
 }
 
+#login-bg{
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0.5),
+    rgb(0, 0, 0,0.7)
+  ),
+  url('./public/img4.jpg'); /* Replace with your library background image path */
+background-size: cover;
+background-position: center;
+background-attachment: fixed; /* Optional: Creates a parallax effect */
+color: #fff;
+}
+
 .genres-section {
   padding: 2rem 0;
 }
@@ -959,6 +972,17 @@ color: #fff;
   position: relative;
 }
 
+.card-login {
+  border: none;
+  border-radius: 12px;
+  background-color: #000000;
+  text-align: center;
+  padding: 2rem;
+  height: 80vh;
+  width:60vh;
+  margin-top: 5vh;
+}
+
 .card:hover {
   transform: translateY(-10px);
   box-shadow: 0 8px 20px rgba(255, 255, 255, 0.137);
@@ -996,4 +1020,18 @@ color: #fff;
   font-size: 1.3rem;
   line-height: 1.4;
   font-family: display;
+}
+
+.card-header{
+  font-family: bold;
+  font-size: 2rem;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.card-body{
+  font-family: display;
+  width: auto;
+  align-self: center;
 }
