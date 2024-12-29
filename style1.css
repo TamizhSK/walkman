@@ -1035,3 +1035,150 @@ color: #fff;
   width: auto;
   align-self: center;
 }
+
+.card-login {
+background: rgb(0, 0, 0);
+border-radius: 12px;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+width: 100%;
+max-width: 500px;
+padding: 2rem;
+}
+
+ .card-header {
+            font-size: 1.5rem;
+            font-family: bold;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            color: #ffffff;
+        }
+
+        .social-login-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            font-family: medium;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem;
+            border-radius: 25px;
+            border: none;
+            text-decoration: none;
+            transition: opacity 0.2s;
+            gap: 0.5rem;
+        }
+
+        .btn:hover {
+            transition: ease-in-out;
+            transition-duration: 50ms;
+        }
+
+        #fb{
+          background-color: #0059ff;
+          color:var(--text-primary)
+        }
+
+        #fb:hover{
+          background-color: #004fe2;
+          color:var(--text-primary)
+        }
+
+
+        #app{
+          background-color: #414141;
+          color:var(--text-primary)
+        }
+
+        #app:hover{
+          background-color: #383838;
+          color:var(--text-primary)
+        }
+
+        #ggl{
+          background-color: #ff7300;
+          color:var(--text-primary)
+        }
+
+        #ggl:hover{
+          background-color: #e06500;
+          color:var(--text-primary)
+        }
+
+        #mail{
+          background-color: #57c425;
+          color:var(--text-primary)
+        }
+
+        #mail:hover{
+          background-color: #3ab301;
+          color:var(--text-primary)
+        }
+
+
+        .separator {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            margin: 1.5rem 0;
+            color: #666;
+        }
+
+        .separator span{
+          font-family: display;
+          color: var(--text-primary);
+        }
+
+        .separator::before,
+        .separator::after {
+            content: '';
+            flex: 1;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .separator span {
+            padding: 0 1rem;
+        }
+
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #ffffff;
+            font-family: display;
+            text-align: left;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid var(--text-secondary);
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.2s;
+            background-color: #000000;
+            color: var(--text-primary);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            background-color: #000000;
+        }
+
+        .forgot-password {
+            text-align: right;
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .forgot-password:hover {
+            text-decoration: underline;
+            color: var(--primary-color);
+        }
