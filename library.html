@@ -200,36 +200,48 @@
     
     <!-- Improved Audio Handling Script -->
     <script>
-        document.querySelectorAll('.genre-card').forEach(card => {
-            const audioId = card.dataset.audio;
-            const audio = document.getElementById(audioId);
+    document.querySelectorAll('.genre-card').forEach(card => {
+    const audioId = card.dataset.audio;
+    const audio = document.getElementById(audioId);
 
-            card.addEventListener('mouseenter', () => {
-        if (audio) {
+    let isPlaying = false; // Track if audio is playing for smoother control
+
+    // Handle hover play for desktops
+    card.addEventListener('mouseenter', () => {
+        if (!isTouchDevice() && audio) {
             audio.play().catch(e => console.log('Audio playback prevented:', e));
+            isPlaying = true;
         }
     });
 
-    // Pause audio on mouse leave
     card.addEventListener('mouseleave', () => {
-        if (audio) {
+        if (!isTouchDevice() && audio) {
             audio.pause();
             audio.currentTime = 0;
+            isPlaying = false;
         }
     });
 
-    // Toggle audio playback on click/tap
+    // Toggle playback for mobile or desktop on click/tap
     card.addEventListener('click', () => {
         if (audio) {
             if (audio.paused) {
                 audio.play().catch(e => console.log('Audio playback prevented:', e));
+                isPlaying = true;
             } else {
                 audio.pause();
                 audio.currentTime = 0;
+                isPlaying = false;
             }
         }
     });
+
+    // Utility function to check if the device is a touch device
+    function isTouchDevice() {
+        return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    }
 });
+
     </script>
 </body>
 </html>
