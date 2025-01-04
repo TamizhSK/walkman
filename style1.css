@@ -59,6 +59,11 @@ body {
 .navbar {
   padding: 0.5rem 0;
   background-color: rgba(0, 0, 0, 0);
+  z-index: 1030;
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 
 
@@ -68,7 +73,7 @@ body {
   font-style: normal;
   font-weight: bold;
   margin-bottom: 7px;
-  margin-left: 20px;
+  margin-left: 10px;
   margin-right: 20px;
 }
 
@@ -418,8 +423,7 @@ color: #FFFFFF;
   color: inherit;
   text-decoration: none;
   display: inline-block;
-  font-size: 1.5rem; /* Adjust size as needed */
-  margin-right: 1rem;
+  font-size: 1.5rem;
   transition: color 0.3s ease;
 }
 
@@ -537,6 +541,9 @@ color: #FFFFFF;
     width: 95%;
     height: 95%;
   }
+  .feature-item{
+    font-size: 1.8rem;
+  }
 }
 
 @media (max-width: 992px) {
@@ -561,7 +568,10 @@ color: #FFFFFF;
   .navbar {
     padding: 0.5rem;
     margin: 0 10px;
+    z-index: 1030;
+    margin: auto;
   }
+
 
   .navbar-collapse {
     background-color: transparent;
@@ -657,6 +667,7 @@ color: #FFFFFF;
     font-size: 2rem;
     padding: 0.5rem;
   }
+  
 
   .navbar-brand {
     font-size: 1.8rem;
@@ -1087,6 +1098,7 @@ color: #FFFFFF;
   font-size: 2rem;
   margin: 20px 0;
   text-align: center;
+  margin-bottom: auto;
 }
 
 .card-body {
@@ -1387,7 +1399,7 @@ color: #FFFFFF;
 /* --------------- */
 
 /* LOGIN PAGE */
-/* Background settings */
+
 /* Adjust padding to account for fixed navbar height */
 #login-bg {
   background: linear-gradient(
@@ -1404,7 +1416,8 @@ color: #FFFFFF;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: calc(5rem + 1rem) 1rem 1rem; /* Adds space for the navbar (approx 5rem height) */
+  flex-direction: column;
+  padding: 1rem; /* Adjust padding for navbar height */
 }
 
 /* Login card */
@@ -1417,7 +1430,7 @@ color: #FFFFFF;
   padding: 2rem;
   width: 100%;
   max-width: 500px;
-  margin: 2rem 0; /* Avoid overlapping with other content */
+  margin: 2rem 0; /* Margin for separation */
   position: relative;
   display: flex;
   flex-direction: column;
@@ -1429,25 +1442,60 @@ color: #FFFFFF;
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  margin-bottom: 2rem;
+  margin-top: 10px;
 }
 
 .btn {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: center; /* Center icon and text vertically */
+  justify-content: center; /* Center content horizontally */
   padding: 0.75rem;
   border-radius: 25px;
   border: none;
+  font-family: medium;
+  text-transform: uppercase;
   text-decoration: none;
-  font-weight: bold;
   font-size: 1rem;
   transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.btn i {
+  font-size: 1.2rem; /* Adjust icon size */
+  margin-right: 5px; /* Adds extra space between icon and text */
 }
 
 .btn:hover {
   transform: scale(1.05);
 }
+
+/* Style for the login button */
+.btn-login {
+  width: 100%; /* Make the button fit the card width */
+  background-color:var(--primary-color); /* Set the background color to yellow */
+  color: #000; /* Set the text color to black for contrast */
+  padding: 0.75rem; /* Add padding for a comfortable click area */
+  border: none; /* Remove default border */
+  border-radius: 8px; /* Add rounded corners */
+  font-size: 1.2rem;
+  font-family: bold; /* Adjust font size for readability */ /* Make the text bold */
+  text-transform: uppercase; /* Convert text to uppercase */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Add smooth transitions */
+}
+
+.btn-login:hover {
+  background-color: #ffc107; /* Darken the yellow on hover */
+  transform: scale(1.02); /* Slightly enlarge the button on hover */
+}
+
+.btn-login:active {
+  background-color: #e6ac00; /* Slightly darker shade for active state */
+  transform: scale(0.98); /* Slightly shrink the button when clicked */
+}
+
+.invalid-feedback{
+  text-align: left;
+}
+
 
 /* Social button colors */
 #fb {
@@ -1486,12 +1534,13 @@ color: #FFFFFF;
   background-color: #3ab301;
 }
 
+
 /* Separator */
 .separator {
   display: flex;
   align-items: center;
   text-align: center;
-  margin: 2rem 0;
+  margin: 1rem 0;
   color: #bbb;
 }
 
@@ -1508,6 +1557,29 @@ color: #FFFFFF;
   font-weight: bold;
 }
 
+.separator1 {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 1rem 0;
+  color: #bbb;
+}
+
+.separator1::before,
+.separator1::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #666;
+}
+
+.card-header1 {
+  font-family: bold;
+  font-size: 2rem;
+  margin-top: auto;
+  text-align: center;
+  margin-bottom: auto;
+}
+
 /* Form labels and inputs */
 .form-label {
   display: block;
@@ -1515,6 +1587,12 @@ color: #FFFFFF;
   color: #fff;
   text-align: left;
   font-size: 1rem;
+  font-family: display;
+}
+
+.form-control::placeholder {
+  color: lightgrey; /* Set the placeholder color to light grey */
+  opacity: 0.5; /* Ensure the color is not transparent */
 }
 
 .form-control {
@@ -1525,36 +1603,31 @@ color: #FFFFFF;
   font-size: 1rem;
   transition: border-color 0.2s ease;
   background-color: #111;
-  color: #fff;
+  color: #ffffff;
+  font-family: display;
 }
 
 .form-control:focus {
   outline: none;
   border-color: #0059ff;
-  background-color: #111;
+  color:#ffffff;
+  background-color: #00000000;
+  font-family: display;
 }
 
-/* Forgot password link */
-.forgot-password {
-  display: block;
-  text-align: right;
-  margin-top: 1rem;
-  font-size: 0.9rem;
-  color: #bbb;
-  text-decoration: none;
+.b{
+  font-family: display;
+  margin-top: auto;
+  color: #888888;
 }
 
-.forgot-password:hover {
-  color: #0059ff;
-  text-decoration: underline;
-}
 
 /* Responsive Design */
 
 /* Small screens (phones) */
 @media (max-width: 576px) {
   #login-bg {
-    padding: calc(5rem + 0.5rem) 0.5rem 0.5rem;
+    padding: 0.5rem 0.5rem;
   }
 
   .card-login {

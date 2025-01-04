@@ -37,13 +37,16 @@
     </nav>
 
     <!-- Login Card -->
-    <div class="container d-flex justify-content-center align-items-center min-vh-100">
+    <div class="container mt-3 d-flex justify-content-center align-items-center min-vh-100">
         <div class="card-login">
-            <div class="text-center mb-4">
+            <div class="text-center mb-2">
                 <a class="navbar-brand" href="#">
                     Walkman<span class="brand-dot"></span>
                 </a>
-                <h2 class="card-header">Login</h2>
+                <p class="b">Endless Music, Endless Fun!</p>
+                <h2 class="card-header1">Login</h2>
+            </div>
+            <div class="separator1">
             </div>
 
             <!-- Social Login Buttons -->
@@ -72,40 +75,39 @@
             </div>
 
             <!-- Login Form -->
-            <form id="loginForm" onsubmit="return handleLogin(event)">
-                <div class="mb-3">
-                    <label for="username" class="form-label">Username</label>
-                    <input 
-                        type="text" 
-                        id="username" 
-                        name="username" 
-                        class="form-control" 
-                        placeholder="Enter your username" 
-                        pattern="^[a-zA-Z0-9_]{4,20}$" 
-                        title="Username must be 4-20 characters long and can only contain letters, numbers, and underscores" 
-                        required>
-                    <div id="usernameError" class="invalid-feedback"></div>
-                </div>
+<!-- Login Form -->
+<form id="loginForm">
+    <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input 
+            type="text" 
+            id="username" 
+            name="username" 
+            class="form-control" 
+            placeholder="Enter your username" 
+            required>
+        <div id="usernameError" class="invalid-feedback"></div>
+    </div>
 
-                <div class="mb-3">
-                    <label for="password" class="form-label">Password</label>
-                    <input 
-                        type="password" 
-                        id="password" 
-                        name="password" 
-                        class="form-control" 
-                        placeholder="Enter your password" 
-                        pattern="^(?=.*[A-Za-z])(?=.*\\d)(?=.*[!@#$%^&*()_+\\-=\\[\\]{}|;:,.?])[A-Za-z\\d!@#$%^&*()_+\\-=\\[\\]{}|;:,.?]{8,}$" 
-                        title="Password must be at least 8 characters long and include letters, numbers, and special characters" 
-                        required>
-                    <div id="passwordError" class="invalid-feedback"></div>
-                </div>
+    <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input 
+            type="password" 
+            id="password" 
+            name="password" 
+            class="form-control" 
+            placeholder="Enter your password" 
+            required>
+        <div id="passwordError" class="invalid-feedback"></div>
+    </div>
 
-                <div class="d-flex justify-content-between align-items-center">
-                    <a href="#" class="forgot-password">Forgot Password?</a>
-                    <button type="submit" class="btn btn-primary">Login</button>
-                </div>
-            </form>
+    <div class="d-flex justify-content-between align-items-center">
+        <button type="submit" class="btn btn-login">Login</button>
+    </div>
+</form>
+
+
+
         </div>
     </div>
 
@@ -114,17 +116,65 @@
 
     <!-- Custom JavaScript -->
     <script>
-        // JavaScript for form validation and interactivity
-        function handleLogin(event) {
-            event.preventDefault();
-            const form = event.target;
-            if (form.checkValidity()) {
-                console.log("Form is valid. Redirecting...");
+document.getElementById("loginForm").addEventListener("submit", function (event) {
+    // Prevent the default form submission initially
+    event.preventDefault();
+    
+    const username = document.getElementById("username");
+    const password = document.getElementById("password");
+    const usernameError = document.getElementById("usernameError");
+    const passwordError = document.getElementById("passwordError");
+    let isValid = true;
+
+    // Username validation
+    const usernamePattern = /^[a-zA-Z0-9_]{4,20}$/;
+    if (!usernamePattern.test(username.value)) {
+        usernameError.textContent = "Username must be 4-20 characters long and can only contain letters, numbers, and underscores.";
+        username.classList.add("is-invalid");
+        isValid = false;
+    } else {
+        usernameError.textContent = "";
+        username.classList.remove("is-invalid");
+    }
+
+    // Password validation
+    const passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=\[\]{}|;:,.?])[A-Za-z\d!@#$%^&*()_+\-=\[\]{}|;:,.?]{8,}$/;
+    if (!passwordPattern.test(password.value)) {
+        passwordError.textContent = "Password must be at least 8 characters long and include letters, numbers, and special characters.";
+        password.classList.add("is-invalid");
+        isValid = false;
+    } else {
+        passwordError.textContent = "";
+        password.classList.remove("is-invalid");
+    }
+
+    // If form is valid, submit it and then redirect
+    if (isValid) {
+        // You can use either of these approaches:
+
+        // Approach 1: Using form's submit() method
+        this.submit(); // Submit the form
+        window.location.href = "index.html"; // Redirect after submission
+
+        // Approach 2: Using fetch to submit form data
+        /*
+        fetch(this.action, {
+            method: 'POST',
+            body: new FormData(this)
+        })
+        .then(response => {
+            if (response.ok) {
                 window.location.href = "index.html";
-            } else {
-                form.classList.add("was-validated");
             }
-        }
-    </script>
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+        */
+    }
+});
+
+
+</script>
 </body>
 </html>
