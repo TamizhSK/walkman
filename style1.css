@@ -696,10 +696,9 @@ color: #FFFFFF;
 
   .feature-text {
     line-height: 1.3;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    text-align: justify;
   }
-
-
 }
 
 /*----------------------------*/
@@ -993,48 +992,40 @@ color: #FFFFFF;
 
 /* -------------------- */
 
-/* PREMIUM CARDS */
+/* PREMIUM CARDS */ 
 
-#back-bg{
+#back-bg {
   background: linear-gradient(
     rgba(0, 0, 0, 0.8),
     rgba(0, 0, 0, 0.8)
   ),
-  url('./public/img7.jpg'); /* Replace with your library background image path */
-background-size: cover;
-background-position: center;
-background-attachment: fixed; /* Optional: Creates a parallax effect */
-color: #fff;
+  url('./public/img7.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #fff;
 }
-
-#login-bg{
-  background: linear-gradient(
-    rgba(0, 0, 0, 0.7),
-    rgba(0, 0, 0, 0.5),
-    rgb(0, 0, 0,0.7)
-  ),
-  url('./public/img4.jpg'); /* Replace with your library background image path */
-background-size: cover;
-background-position: center;
-background-attachment: fixed; /* Optional: Creates a parallax effect */
-color: #fff;
-}
-
 
 .premium-header {
   text-align: center;
-  margin-top: 3rem;
+  margin: 3rem auto;
+  padding: 0 1rem;
+  max-width: 1200px;
 }
 
 .premium-header h1 {
   font-size: 3rem;
   font-family: bold;
+  line-height: 1.2;
 }
 
 .premium-header p {
   font-size: 1.3rem;
   margin-top: 0.5rem;
   font-family: medium;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .card {
@@ -1045,17 +1036,10 @@ color: #fff;
   padding: 2rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
-}
-
-.card-login {
-  border: none;
-  border-radius: 12px;
-  background-color: #000000;
-  text-align: center;
-  padding: 2rem;
-  height: 80vh;
-  width:60vh;
-  margin-top: 5vh;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .card:hover {
@@ -1095,158 +1079,528 @@ color: #fff;
   font-size: 1.3rem;
   line-height: 1.4;
   font-family: display;
+  margin-bottom: 1.5rem;
 }
 
-.card-header{
+.card-header {
   font-family: bold;
   font-size: 2rem;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin: 20px 0;
   text-align: center;
 }
 
-.card-body{
+.card-body {
   font-family: display;
-  width: auto;
-  align-self: center;
+  width: 100%;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
+/* Base card grid styles */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  width: 100%;
+  padding: 0 2rem;
+  margin: 0 auto;
+}
+
+.card {
+  width: 100%;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Medium screens */
+@media (min-width: 768px) and (max-width: 991px) {
+  .card-container {
+    grid-template-columns: repeat(2, minmax(300px, 350px));
+    justify-content: center;
+    max-width: 800px;
+  }
+  
+  .premium-header {
+    max-width: 800px;
+    margin: 3rem auto;
+  }
+  
+  .premium-header h1 {
+    font-size: 2.5rem;
+  }
+  
+  .premium-header p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .card {
+    padding: 1.5rem;
+  }
+  
+  .card h3 {
+    font-size: 1.6rem;
+  }
+  
+  .card p {
+    font-size: 1.1rem;
+  }
+  
+  .card i {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* Large screens */
+@media (min-width: 1400px) {
+  .card-container {
+    grid-template-columns: repeat(3, minmax(300px, 400px));
+    max-width: 1400px;
+  }
+  
+  .premium-header {
+    max-width: 1200px;
+    margin: 4rem auto;
+  }
+  
+  .premium-header h1 {
+    font-size: 4rem;
+  }
+  
+  .premium-header p {
+    font-size: 1.5rem;
+    max-width: 800px;
+  }
+  
+  .card {
+    padding: 3rem;
+  }
+  
+  .card h3 {
+    font-size: 2.2rem;
+    margin: 0.5rem 0;
+  }
+  
+  .card p {
+    font-size: 1.4rem;
+    line-height: 1.6;
+  }
+  
+  .card i {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* Extra large screens */
+@media (min-width: 1800px) {
+  .card-container {
+    grid-template-columns: repeat(4, minmax(300px, 450px));
+    max-width: 1800px;
+  }
+  
+  .premium-header {
+    max-width: 1400px;
+    margin: 5rem auto;
+  }
+  
+  .premium-header h1 {
+    font-size: 4.5rem;
+  }
+  
+  .premium-header p {
+    font-size: 1.8rem;
+    max-width: 1000px;
+  }
+  
+  .card {
+    padding: 4rem;
+  }
+  
+  .card h3 {
+    font-size: 2.5rem;
+  }
+  
+  .card p {
+    font-size: 1.6rem;
+    line-height: 1.8;
+  }
+  
+  .card i {
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
+  }
+}
+/* Small screens */
+@media (max-width: 768px) {
+  .premium-header {
+    max-width: 600px;
+    margin: 2rem auto;
+    text-align: center; /* Center-align header content */
+  }
+  
+  .premium-header h1 {
+    font-size: 2.2rem;
+  }
+  
+  .premium-header p {
+    font-size: 1.1rem;
+    max-width: 450px;
+    margin: 0 auto; /* Center-align paragraph */
+  }
+
+  /* Flexbox container for card layout */
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center; /* Centers cards in the container */
+  }
+  
+  .card {
+    padding: 1.25rem;
+    margin-bottom: 1rem;
+    max-width: 320px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center-align card content */
+  }
+  
+  .card i {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .card h3 {
+    font-size: 1.6rem;
+    margin: 0.5rem 0;
+  }
+  
+  .card p {
+    font-size: 1.1rem;
+    line-height: 1.4;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 576px) {
+  .premium-header {
+    max-width: 450px;
+    text-align: center; /* Center-align header content */
+  }
+  
+  .premium-header h1 {
+    font-size: 2rem;
+  }
+  
+  .premium-header p {
+    font-size: 1rem;
+    max-width: 350px;
+    margin: 0 auto; /* Center-align paragraph */
+  }
+
+  /* Adjust card layout */
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center; /* Ensures cards are centered */
+  }
+  
+  .card {
+    padding: 1rem;
+    max-width: 300px;
+    margin: 0 auto; /* Center card horizontally */
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .card i {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .card h3 {
+    font-size: 1.4rem;
+    margin: 0.5rem 0;
+  }
+  
+  .card p {
+    font-size: 1rem;
+    line-height: 1.3;
+  }
+}
+
+
+/* Very small screens */
+@media (max-width: 400px) {
+  .premium-header {
+    max-width: 280px;
+    margin: 1.5rem auto;
+  }
+  
+  .premium-header h1 {
+    font-size: 1.95rem;
+  }
+  
+  .premium-header p {
+    font-size: 0.9rem;
+    max-width: 260px;
+  }
+  
+  .card {
+    padding: 1.75rem;
+    max-width: 260px;
+    display: flex; /* Enables Flexbox layout */
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+  }
+  
+  .card h3 {
+    font-size: 1.2rem;
+    margin-bottom: auto;
+    margin-top: 8px;
+  }
+  
+  .card p {
+    font-size: 0.9rem;
+    line-height: 1.2;
+    margin-bottom: auto;
+  }
+  
+  .card i {
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: auto;
+  }
+}
+/* --------------- */
+
+/* LOGIN PAGE */
+/* Background settings */
+/* Adjust padding to account for fixed navbar height */
+#login-bg {
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.7)
+    ),
+    url('./public/img4.jpg'); /* Replace with your image path */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: calc(5rem + 1rem) 1rem 1rem; /* Adds space for the navbar (approx 5rem height) */
+}
+
+/* Login card */
 .card-login {
-background: rgb(0, 0, 0);
-border-radius: 12px;
-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-width: 100%;
-max-width: 500px;
-padding: 2rem;
+  border: none;
+  border-radius: 12px;
+  background-color: #000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  padding: 2rem;
+  width: 100%;
+  max-width: 500px;
+  margin: 2rem 0; /* Avoid overlapping with other content */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
+/* Social login buttons */
+.social-login-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
 
-        .social-login-buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-            margin-bottom: 1.5rem;
-            text-transform: uppercase;
-            font-family: medium;
-        }
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem;
+  border-radius: 25px;
+  border: none;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
 
-        .btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0.75rem;
-            border-radius: 25px;
-            border: none;
-            text-decoration: none;
-            transition: opacity 0.2s;
-            gap: 0.5rem;
-        }
+.btn:hover {
+  transform: scale(1.05);
+}
 
-        .btn:hover {
-            transition: ease-in-out;
-            transition-duration: 50ms;
-        }
+/* Social button colors */
+#fb {
+  background-color: #0059ff;
+  color: #fff;
+}
 
-        #fb{
-          background-color: #0059ff;
-          color:var(--text-primary)
-        }
+#fb:hover {
+  background-color: #004fe2;
+}
 
-        #fb:hover{
-          background-color: #004fe2;
-          color:var(--text-primary)
-        }
+#app {
+  background-color: #414141;
+  color: #fff;
+}
 
+#app:hover {
+  background-color: #383838;
+}
 
-        #app{
-          background-color: #414141;
-          color:var(--text-primary)
-        }
+#ggl {
+  background-color: #ff7300;
+  color: #fff;
+}
 
-        #app:hover{
-          background-color: #383838;
-          color:var(--text-primary)
-        }
+#ggl:hover {
+  background-color: #e06500;
+}
 
-        #ggl{
-          background-color: #ff7300;
-          color:var(--text-primary)
-        }
+#mail {
+  background-color: #57c425;
+  color: #fff;
+}
 
-        #ggl:hover{
-          background-color: #e06500;
-          color:var(--text-primary)
-        }
+#mail:hover {
+  background-color: #3ab301;
+}
 
-        #mail{
-          background-color: #57c425;
-          color:var(--text-primary)
-        }
+/* Separator */
+.separator {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 2rem 0;
+  color: #bbb;
+}
 
-        #mail:hover{
-          background-color: #3ab301;
-          color:var(--text-primary)
-        }
+.separator::before,
+.separator::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #666;
+}
 
+.separator span {
+  padding: 0 1rem;
+  color: #fff;
+  font-weight: bold;
+}
 
-        .separator {
-            display: flex;
-            align-items: center;
-            text-align: center;
-            margin: 1.5rem 0;
-            color: #666;
-        }
+/* Form labels and inputs */
+.form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #fff;
+  text-align: left;
+  font-size: 1rem;
+}
 
-        .separator span{
-          font-family: display;
-          color: var(--text-primary);
-        }
+.form-control {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid #666;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.2s ease;
+  background-color: #111;
+  color: #fff;
+}
 
-        .separator::before,
-        .separator::after {
-            content: '';
-            flex: 1;
-            border-bottom: 1px solid #ddd;
-        }
+.form-control:focus {
+  outline: none;
+  border-color: #0059ff;
+  background-color: #111;
+}
 
-        .separator span {
-            padding: 0 1rem;
-        }
+/* Forgot password link */
+.forgot-password {
+  display: block;
+  text-align: right;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #bbb;
+  text-decoration: none;
+}
 
+.forgot-password:hover {
+  color: #0059ff;
+  text-decoration: underline;
+}
 
-        .form-label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: #ffffff;
-            font-family: display;
-            text-align: left;
-        }
+/* Responsive Design */
 
-        .form-control {
-            width: 100%;
-            padding: 0.75rem;
-            border: 2px solid var(--text-secondary);
-            border-radius: 8px;
-            font-size: 1rem;
-            transition: border-color 0.2s;
-            background-color: #000000;
-            color: var(--text-primary);
-        }
+/* Small screens (phones) */
+@media (max-width: 576px) {
+  #login-bg {
+    padding: calc(5rem + 0.5rem) 0.5rem 0.5rem;
+  }
 
-        .form-control:focus {
-            outline: none;
-            border-color: var(--primary-color);
-            background-color: #000000;
-        }
+  .card-login {
+    padding: 1.5rem;
+  }
 
-        .forgot-password {
-            text-align: right;
-            color: var(--text-primary);
-            text-decoration: none;
-            font-size: 0.9rem;
-        }
+  .btn {
+    font-size: 0.9rem;
+    padding: 0.6rem;
+  }
 
-        .forgot-password:hover {
-            text-decoration: underline;
-            color: var(--primary-color);
-        }
+  .social-login-buttons {
+    gap: 0.75rem;
+  }
+
+  .form-control {
+    font-size: 0.9rem;
+    padding: 0.6rem;
+  }
+
+  .form-label {
+    font-size: 0.9rem;
+  }
+}
+
+/* Medium screens (tablets) */
+@media (max-width: 768px) {
+  .card-login {
+    width: 90%;
+    max-width: 400px;
+    padding: 2rem;
+  }
+
+  .btn {
+    padding: 0.75rem;
+    font-size: 1rem;
+  }
+}
+
+/* Large screens (desktop) */
+@media (min-width: 992px) {
+  .card-login {
+    max-width: 500px;
+    margin-top: 0;
+  }
+}
+
+/* ---------- */
+      
